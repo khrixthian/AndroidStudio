@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void llamadaTelefono(View view) {
-        Intent intent = new Intent(Intent.ACTION_DIAL,
+        Intent intent = new Intent(Intent.ACTION_CALL,
                 Uri.parse("tel:944028000"));
         startActivity(intent);
     }
@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void streetView(View view) {//muestra lo mismo que google maps aunke le cambie las coordenadas
         Intent intent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("google.streetview:\n" +
-                        "cbll=800.2840966,-12.9653554&\n" +
-                        "cbp=1,yaw,pitch,zoom\n" +
+                Uri.parse("google.streetview:" +
+                        "cbll=43.2840966,-2.9653554&" +
+                        "cbp=1,yaw,pitch,zoom" +
                         "& mz=mapZoom"));
         startActivity(intent);
     }
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public  void webSearch(View view){//
-        Intent intent = new Intent(Intent.ACTION_WEB_SEARCH, SearchManager.QUERY("https://publico.es"));
+        Intent intent = new Intent(Intent.ACTION_WEB_SEARCH, Uri.parse("https://publico.es"));
         startActivity(intent);
     }
 }
